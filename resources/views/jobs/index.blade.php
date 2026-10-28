@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
     <h1>{{$title}}</h1>
     <ul>
         {{--        <?php foreach ($jobs as $job): ?>--}}
@@ -16,4 +14,4 @@
             <p>No jobs available!!!</p>
         @endforelse
     </ul>
-@endsection
+</x-layout>
