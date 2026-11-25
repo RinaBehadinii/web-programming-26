@@ -12,6 +12,11 @@
     />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     @vite('resources/css/app.css')
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <title>{{ $title ?? 'Workopia' }}</title>
 </head>
 
@@ -21,6 +26,15 @@
     <x-top-banner />
     <x-hero />
 @endif
+<!-- Display alert messages -->
+@if (session('success'))
+    <x-alert type="success" message="{{ session('success') }}" />
+@endif
+
+@if (session('error'))
+    <x-alert type="error" message="{{ session('error') }}" />
+@endif
+
 <main class="container mx-auto p-4 mt-4">{{ $slot }}</main>
 <script src="{{ asset('js/script.js') }}"></script>
 </body>
